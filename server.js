@@ -1,1 +1,20 @@
-console.log('batata')
+console.log('acessou')
+const express = require('express')
+
+const { resolve } = require('path')
+
+const app = express()
+
+app.use('/',
+    express.static(
+        resolve(
+            __dirname,
+            './dist'
+        )
+    )
+)
+
+app
+    .listen(process.env.PORT || 3000, function(){
+        console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    })
