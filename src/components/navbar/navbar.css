@@ -1,0 +1,58 @@
+div.divViewNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    background-Color: #0f3d83;
+    color: #fff;
+    margin-bottom: -100px;
+}
+
+div.divRowNav{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    font-family: 'Montserrat';
+}
+
+.titleNav{
+    margin-left: 65px;
+    font-weight: 600;
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.subtitleNav{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.buttonNav{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: rgb(36, 141, 45);
+    color: black;
+    border: white;
+    border-radius: 8px;
+    margin-right: 65px;
+}
+
+.link-form{
+    text-decoration: none;
+}
+
+.buttonNav:hover{
+    background: rgb(7, 95, 15);
+}
+
+.add-user{
+    font-size: 25pt;
+    font-weight: 700;
+    margin-bottom: 5px;
+}

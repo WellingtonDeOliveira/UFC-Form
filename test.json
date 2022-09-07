@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "nome": "fulano de tal",
+            "cpf": "927.469.050-94",
+            "rg": "49.393.709-2",
+            "data_nascimento": "2000-04-20",
+            "mae": "fulana",
+            "cadastro": "2022-08-24"
+        },
+        {
+            "nome": "Beltrano de tal",
+            "cpf": "572.660.620-55",
+            "rg": "26.365.296-8",
+            "data_nascimento": "1998-03-22",
+            "mae": "Beltrana",
+            "cadastro": "2022-08-30"
+        },
+        {
+            "nome": "Cigrano de tal",
+            "cpf": "222.585.130-14",
+            "rg": "10.237.985-3",
+            "data_nascimento": "1984-07-14",
+            "mae": "Cigrana",
+            "cadastro": "2022-09-04"
+        }
+    ]
+}
