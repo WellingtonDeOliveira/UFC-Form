@@ -8,7 +8,7 @@ app.use('/',
     express.static(
         resolve(
             __dirname,
-            './build'
+            './dist'
         )
     )
 )
