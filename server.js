@@ -1,4 +1,3 @@
-console.log('acessou')
 const express = require('express')
 
 const { resolve } = require('path')
