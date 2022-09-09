@@ -17,6 +17,9 @@
     border-radius: 5px 0px 0px 5px;
     text-align-last: center;
 }
+.campo-label-min{
+    width: 80%;
+}
 .icon-search{
     background-color: rgb(197, 197, 197);
     padding: 4px;

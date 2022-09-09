@@ -46,7 +46,10 @@ div.divRowNav{
 .link-form{
     text-decoration: none;
 }
-
+.link-form-min{
+    text-decoration: none;
+    margin-left: -3.4rem;
+}
 .buttonNav:hover{
     background: rgb(7, 95, 15);
 }

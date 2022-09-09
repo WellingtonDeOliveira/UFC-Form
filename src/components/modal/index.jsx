@@ -14,47 +14,27 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 
-export default function ModalComp({ data, setData, dataEdit, isOpen, onClose }) {
+export default function ModalComp({ data, setUser, upd, setUpd, dataEdit, isOpen, onClose }) {
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
 
-  const [name, setName] = useState(dataEdit.name || "");
+  const [nome, setNome] = useState(dataEdit.nome || "");
   const [cpf, setCpf] = useState(dataEdit.cpf || "");
   const [rg, setRg] = useState(dataEdit.rg || "");
   const [mae, setMae] = useState(dataEdit.mae || "");
-  const [data_nascimento, setNascimento] = useState(dataEdit.data_nascimento || "");
-  const [cadastro, setCadastro] = useState(today.getFullYear() + "" +
+  const [date_nascimento, setNascimento] = useState(dataEdit.date_nascimento || "");
+  const [date_cadastro, setCadastro] = useState(today.getFullYear() + "" +
     ((today.getMonth() + 1) <= 9 ? "-0" + (today.getMonth() + 1) : "-" + (today.getMonth() + 1))
     + "" + ((today.getDate()) <= 9 ? "-0" + (today.getDate()) : "-" + (today.getDate())));
 
   const handleSave = () => {
-    if (!name || !cpf || !rg || !data_nascimento || !cadastro || !mae) return alert("Preencha todos os campos!!");
+    if (!nome || !cpf || !rg || !date_nascimento || !date_cadastro || !mae) return alert("Preencha todos os campos!!");
 
-    if (cpfAlreadyExists()) {
-      return alert("CPF já cadastrado!");
-    }
-
-    if (Object.keys(dataEdit).length) {
-      data[dataEdit.index] = { name, cpf, rg, data_nascimento, mae, cadastro };
-    }
-
-    const newDataArray = !Object.keys(dataEdit).length
-      ? [...(data ? data : []), { name, cpf, rg, data_nascimento, mae, cadastro }]
-      : [...(data ? data : [])];
-
-    localStorage.setItem("cad_cliente", JSON.stringify(newDataArray));
-
-    setData(newDataArray);
+    
+    setUser(nome, cpf, rg, date_nascimento, mae, date_cadastro)
+    setUpd(!upd);
 
     onClose();
-  };
-
-  const cpfAlreadyExists = () => {
-    if (dataEdit.cpf !== cpf && data?.length) {
-      return data.find((item) => item.cpf === cpf);
-    }
-
-    return false;
   };
 
   return (
@@ -70,8 +50,8 @@ export default function ModalComp({ data, setData, dataEdit, isOpen, onClose }) 
                 <FormLabel>Nome</FormLabel>
                 <Input
                   type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
                 />
               </Box>
               <Box>
@@ -104,7 +84,7 @@ export default function ModalComp({ data, setData, dataEdit, isOpen, onClose }) 
                 <FormLabel>Data Nascimento</FormLabel>
                 <Input
                   type="date"
-                  value={data_nascimento}
+                  value={date_nascimento}
                   max={today.getFullYear()+""+
                     ((today.getMonth()+1) <= 9 ? "-0"+(today.getMonth()+1) : "-"+(today.getMonth()+1))
                     +""+((today.getDate()) <= 9 ? "-0"+(today.getDate()) : "-"+(today.getDate()))}
@@ -112,10 +92,10 @@ export default function ModalComp({ data, setData, dataEdit, isOpen, onClose }) 
                 />
               </Box>
               <Box>
-                <FormLabel>Data Cadastro</FormLabel>
+                <FormLabel>Data date_Cadastro</FormLabel>
                 <Input
                   type="date"
-                  value={cadastro}
+                  value={date_cadastro}
                   disabled
                   onChange={(e) => setCadastro(e.target.value)}
                 />
