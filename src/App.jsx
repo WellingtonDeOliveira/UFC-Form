@@ -99,7 +99,7 @@ function App() {
             alert(retorno_json.mensagem)
           }
         } else {
-          alert('Produto alterado com sucesso!');
+          alert('Usuário alterado com sucesso!');
           listar();
         }
       })
